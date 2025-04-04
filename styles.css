@@ -5,12 +5,18 @@
     box-sizing: border-box;
 }
 
-body {
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
     font-family: 'Lato', sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #f9f9f9;
-    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -62,48 +68,22 @@ nav {
 /* Hamburger Menu Styles */
 .hamburger {
     display: none;
-    padding: 10px;
-    background: none;
-    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
     cursor: pointer;
     z-index: 1001;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
-.hamburger-box {
-    width: 30px;
-    height: 24px;
-    display: inline-block;
-    position: relative;
-}
-
-.hamburger-inner {
-    display: block;
-    top: 50%;
-    margin-top: -2px;
-    width: 30px;
+.hamburger-line {
+    width: 100%;
     height: 3px;
     background-color: #1a3e72;
-    position: absolute;
-    transition: transform 0.2s ease;
-}
-
-.hamburger-inner::before,
-.hamburger-inner::after {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #1a3e72;
-    position: absolute;
-    transition: transform 0.2s ease;
-}
-
-.hamburger-inner::before {
-    top: -8px;
-}
-
-.hamburger-inner::after {
-    bottom: -8px;
+    transition: all 0.3s ease;
 }
 
 /* Header/Hero Section */
@@ -117,6 +97,7 @@ header {
     align-items: center;
     text-align: center;
     padding: 0 2rem;
+    margin-top: 80px;
 }
 
 header h1 {
@@ -742,22 +723,35 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 0 1rem;
+        margin-top: 70px;
+    }
+    
     header h1 {
         font-size: 2.5rem;
+        line-height: 1.2;
     }
+    
+    header p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    
     .section-title {
         font-size: 2rem;
     }
     
     /* Mobile Menu Styles */
     .hamburger {
-        display: block;
+        display: flex;
     }
 
     .nav-links {
         position: fixed;
         top: 70px;
         left: 0;
+        right: 0;
         width: 100%;
         background: #0d2a56;
         flex-direction: column;
@@ -766,6 +760,7 @@ footer {
         transform: translateY(-150%);
         transition: transform 0.3s ease;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
     }
 
     .nav-links.active {
@@ -780,31 +775,26 @@ footer {
 
     .nav-links a {
         color: white !important;
-        text-transform: uppercase;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        padding: 0.8rem 0;
+        padding: 1rem 0;
         display: block;
         width: 100%;
+        font-size: 1rem;
     }
 
     .nav-links a:hover {
         background: rgba(255, 255, 255, 0.1);
     }
 
-    /* Hamburger animation when active */
-    .hamburger.active .hamburger-inner {
-        background-color: transparent;
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
     }
 
-    .hamburger.active .hamburger-inner::before {
-        transform: translateY(8px) rotate(45deg);
-        background-color: white;
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
     }
 
-    .hamburger.active .hamburger-inner::after {
-        transform: translateY(-8px) rotate(-45deg);
-        background-color: white;
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
     .slider-container {
@@ -813,27 +803,57 @@ footer {
     .avocats-container {
         padding: 0 30px;
     }
+    
+    /* Correction spécifique pour le formulaire d'avis */
+    #avis-modal .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    #avis-form input,
+    #avis-form textarea {
+        width: 100%;
+    }
+    
+    #avis-form .submit-btn {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
     header h1 {
         font-size: 2rem;
     }
-    header p {
-        font-size: 1rem;
-    }
+    
     .section-title {
         font-size: 1.8rem;
     }
+    
     .about-text h3 {
         font-size: 1.5rem;
     }
-    .expertise-card,
-    .avocat-card,
-    .avis-card {
-        width: 250px;
-    }
+    
     .avocats-container {
         padding: 0 15px;
+    }
+    
+    /* Ajustements supplémentaires pour petits écrans */
+    .avis-card,
+    .avocat-card {
+        width: 260px;
+    }
+    
+    .modal-content {
+        padding: 1rem;
+    }
+    
+    .rating-stars label {
+        font-size: 1.8rem;
+        margin: 0 2px;
+    }
+    
+    #avis-form .form-group {
+        margin-bottom: 1rem;
     }
 }
