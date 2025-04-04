@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form Submission Handling
     // =============================================
     const forms = [
-        { id: 'contact-form', action: 'https://formspree.io/f/xnnpgoae' },
+        { id: 'contact-form', action: 'https://formspree.io/f/xgvanppz' },
         { id: 'avis-form', action: '' }
     ];
     
