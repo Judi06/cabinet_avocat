@@ -1,147 +1,223 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Header animation
+    // =============================================
+    // Header Animation
+    // =============================================
     setTimeout(() => {
-        document.querySelector('header h1').style.opacity = '1';
-        document.querySelector('header h1').style.transform = 'translateY(0)';
-        document.querySelector('header p').style.opacity = '1';
-        document.querySelector('header p').style.transform = 'translateY(0)';
-        document.querySelector('header .btn').style.opacity = '1';
-        document.querySelector('header .btn').style.transform = 'translateY(0)';
+        const headerTitle = document.querySelector('header h1');
+        const headerText = document.querySelector('header p');
+        const headerBtn = document.querySelector('header .btn');
+        
+        if (headerTitle) {
+            headerTitle.style.opacity = '1';
+            headerTitle.style.transform = 'translateY(0)';
+        }
+        
+        if (headerText) {
+            headerText.style.opacity = '1';
+            headerText.style.transform = 'translateY(0)';
+        }
+        
+        if (headerBtn) {
+            headerBtn.style.opacity = '1';
+            headerBtn.style.transform = 'translateY(0)';
+        }
     }, 500);
-    
-    // Scroll animations
+
+    // =============================================
+    // Scroll Animations
+    // =============================================
     const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
     
-    fadeElements.forEach(el => observer.observe(el));
+    fadeElements.forEach(el => {
+        if (el) observer.observe(el);
+    });
+
+    // =============================================
+    // Mobile Menu Functionality
+    // =============================================
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const body = document.body;
     
-    // Smooth scrolling for navigation
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Don't close for external links
+                const targetId = link.getAttribute('href');
+                if (targetId.startsWith('http') || targetId.endsWith('.html')) {
+                    return;
+                }
+                
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+    }
+
+    // =============================================
+    // Smooth Scrolling for Navigation
+    // =============================================
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
             
-            // Close mobile menu if open
-            if (window.innerWidth <= 768) {
-                document.querySelector('.hamburger').classList.remove('active');
-                document.querySelector('.nav-links').classList.remove('active');
-                document.body.style.overflow = '';
+            // Skip for external links
+            if (targetId.startsWith('http') || targetId.endsWith('.html')) {
+                return;
             }
             
-            // Handle external links
-            if (targetId.startsWith('http') || targetId.endsWith('.html')) {
-                window.location.href = targetId;
-                return;
+            e.preventDefault();
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768 && hamburger && navLinks) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
             }
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
         });
     });
-    
-    // Mobile menu toggle - Enhanced version
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const body = document.body;
-    
-    hamburger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        
-        // Prevent page scrolling when menu is open
-        if (navLinks.classList.contains('active')) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = '';
-        }
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.style.overflow = '';
-        }
-    });
-    
-    // Contact form toggle
+
+    // =============================================
+    // Contact Form Toggle
+    // =============================================
     const showFormBtn = document.getElementById('show-form-btn');
     const contactForm = document.getElementById('contact-form');
     
     if (showFormBtn && contactForm) {
-        showFormBtn.addEventListener('click', (e) => {
+        showFormBtn.addEventListener('click', function(e) {
             e.preventDefault();
             contactForm.classList.toggle('active');
-            showFormBtn.textContent = contactForm.classList.contains('active') 
-                ? 'Fermer le Formulaire' 
-                : 'Envoyez un Message';
             
             if (contactForm.classList.contains('active')) {
-                contactForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                this.textContent = 'Fermer le Formulaire';
+                contactForm.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest'
+                });
+            } else {
+                this.textContent = 'Envoyez un Message';
             }
         });
     }
+
+    // =============================================
+    // Form Submission Handling
+    // =============================================
+    const forms = [
+        { id: 'contact-form', action: 'https://formspree.io/f/mgvannvj' },
+        { id: 'avis-form', action: '' }
+    ];
     
-    // Form submission
-    const form = document.getElementById('contact-form');
-    const notification = document.getElementById('notification');
-    
-    if (form) {
-        form.addEventListener('submit', async (e) => {
+    forms.forEach(formConfig => {
+        const form = document.getElementById(formConfig.id);
+        if (!form) return;
+        
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('button[type="submit"]');
+            const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
+            // Show loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
             
             try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+                // For demo purposes - in production, use formConfig.action
+                let response;
+                if (formConfig.id === 'contact-form') {
+                    response = await fetch(formConfig.action, {
+                        method: 'POST',
+                        body: new FormData(this),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                } else {
+                    // Simulate success for avis form
+                    response = { ok: true };
+                }
                 
                 if (response.ok) {
-                    showNotification('Votre message a été envoyé avec succès !', 'success');
-                    form.reset();
-                    setTimeout(() => {
-                        if (contactForm) {
-                            contactForm.classList.remove('active');
-                            showFormBtn.textContent = 'Envoyez un Message';
-                        }
-                    }, 2000);
+                    showNotification(
+                        formConfig.id === 'contact-form' 
+                            ? 'Votre message a été envoyé avec succès !' 
+                            : 'Merci pour votre avis ! Il sera publié après modération.',
+                        'success'
+                    );
+                    
+                    this.reset();
+                    
+                    // Close modal if avis form
+                    if (formConfig.id === 'avis-form') {
+                        const avisModal = document.getElementById('avis-modal');
+                        if (avisModal) avisModal.style.display = 'none';
+                        body.style.overflow = '';
+                    }
+                    
+                    // Close contact form if open
+                    if (formConfig.id === 'contact-form' && contactForm) {
+                        contactForm.classList.remove('active');
+                        if (showFormBtn) showFormBtn.textContent = 'Envoyez un Message';
+                    }
                 } else {
                     throw new Error('Erreur lors de l\'envoi du formulaire');
                 }
             } catch (error) {
-                showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
-                console.error(error);
+                console.error('Error:', error);
+                showNotification(
+                    'Une erreur est survenue. Veuillez réessayer.',
+                    'error'
+                );
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
             }
         });
-    }
-    
-    // Carousel Avocats
+    });
+
+    // =============================================
+    // Avocats Carousel
+    // =============================================
     const avocatTrack = document.querySelector('.avocats-track');
     const avocatCards = document.querySelectorAll('.avocat-card');
     const avocatPrev = document.querySelector('.avocat-prev');
@@ -150,22 +226,36 @@ document.addEventListener('DOMContentLoaded', function() {
     if (avocatTrack && avocatCards.length > 0) {
         let currentAvocatIndex = 0;
         const cardWidth = avocatCards[0].offsetWidth + 32; // width + gap
+        const maxIndex = avocatCards.length - 1;
 
         function updateAvocatCarousel() {
             avocatTrack.style.transform = `translateX(-${currentAvocatIndex * cardWidth}px)`;
+            
+            // Update button states
+            if (avocatPrev) {
+                avocatPrev.disabled = currentAvocatIndex === 0;
+            }
+            if (avocatNext) {
+                avocatNext.disabled = currentAvocatIndex === maxIndex;
+            }
         }
 
+        // Navigation handlers
         if (avocatNext) {
             avocatNext.addEventListener('click', () => {
-                currentAvocatIndex = (currentAvocatIndex + 1) % avocatCards.length;
-                updateAvocatCarousel();
+                if (currentAvocatIndex < maxIndex) {
+                    currentAvocatIndex++;
+                    updateAvocatCarousel();
+                }
             });
         }
 
         if (avocatPrev) {
             avocatPrev.addEventListener('click', () => {
-                currentAvocatIndex = (currentAvocatIndex - 1 + avocatCards.length) % avocatCards.length;
-                updateAvocatCarousel();
+                if (currentAvocatIndex > 0) {
+                    currentAvocatIndex--;
+                    updateAvocatCarousel();
+                }
             });
         }
 
@@ -178,11 +268,13 @@ document.addEventListener('DOMContentLoaded', function() {
             avocatTrack.style.animationPlayState = 'running';
         });
 
-        // Initialisation
+        // Initialize
         updateAvocatCarousel();
     }
 
-    // Carousel Avis
+    // =============================================
+    // Avis Carousel Auto-Scroll
+    // =============================================
     const avisTrack = document.querySelector('.avis-track');
     if (avisTrack) {
         avisTrack.style.animationDuration = '90s';
@@ -196,14 +288,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Slider for cabinet section
+    // =============================================
+    // Cabinet Slider
+    // =============================================
     const sliderImages = document.querySelectorAll('.slider-container img');
     if (sliderImages.length > 0) {
         let currentIndex = 0;
+        let slideInterval;
 
         function showSlide(index) {
-            sliderImages.forEach(img => img.classList.remove('active'));
-            sliderImages[index].classList.add('active');
+            sliderImages.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
         }
 
         function nextSlide() {
@@ -211,11 +307,10 @@ document.addEventListener('DOMContentLoaded', function() {
             showSlide(currentIndex);
         }
 
-        // Initialize slider
-        showSlide(currentIndex);
-
-        // Auto-advance slides every 5 seconds
-        let slideInterval = setInterval(nextSlide, 5000);
+        function startSlider() {
+            showSlide(currentIndex);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
 
         // Pause on hover
         const sliderContainer = document.querySelector('.about-slider');
@@ -225,95 +320,77 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             sliderContainer.addEventListener('mouseleave', () => {
+                clearInterval(slideInterval);
                 slideInterval = setInterval(nextSlide, 5000);
             });
         }
+
+        startSlider();
     }
 
-    // Gestion des modals
-    function initModals() {
-        const modal = document.getElementById('avis-modal');
-        if (!modal) return;
-        
-        const openModalBtns = document.querySelectorAll('#open-avis-modal');
-        const closeModal = document.querySelector('.close-modal');
-        
-        // Ouverture du modal
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+    // =============================================
+    // Modal Handling
+    // =============================================
+    const avisModal = document.getElementById('avis-modal');
+    const openAvisModalBtns = document.querySelectorAll('#open-avis-modal');
+    const closeModalButtons = document.querySelectorAll('.close-modal');
+    
+    // Open modal
+    if (openAvisModalBtns.length > 0 && avisModal) {
+        openAvisModalBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
+                avisModal.style.display = 'block';
+                body.style.overflow = 'hidden';
             });
         });
-        
-        // Fermeture du modal
-        if (closeModal) {
-            closeModal.addEventListener('click', () => {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-            });
-        }
-        
-        // Fermeture en cliquant à l'extérieur
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // Gestion du formulaire d'avis
-        const avisForm = document.getElementById('avis-form');
-        if (avisForm) {
-            avisForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Récupération des données du formulaire
-                const formData = new FormData(this);
-                const nom = formData.get('name');
-                const note = formData.get('note');
-                const commentaire = formData.get('comment');
-                
-                // Validation des données
-                if (!nom || !note || !commentaire) {
-                    showNotification("Veuillez remplir tous les champs du formulaire.", 'error');
-                    return;
-                }
-                
-                // Simulation d'envoi
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-                
-                // Simulation de délai pour l'envoi
-                setTimeout(() => {
-                    showNotification("Merci pour votre avis ! Il sera publié après modération.", 'success');
-                    this.reset();
-                    modal.style.display = 'none';
-                    document.body.style.overflow = '';
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalText;
-                }, 1500);
-            });
-        }
     }
     
-    // Initialisation des modals
-    initModals();
+    // Close modal
+    if (closeModalButtons.length > 0) {
+        closeModalButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    body.style.overflow = '';
+                }
+            });
+        });
+    }
+    
+    // Close when clicking outside
+    window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+            body.style.overflow = '';
+        }
+    });
+
+    // =============================================
+    // Notification System
+    // =============================================
+    window.showNotification = function(message, type) {
+        const notification = document.getElementById('notification');
+        if (!notification) return;
+        
+        notification.textContent = message;
+        notification.className = `notification ${type} active`;
+        
+        setTimeout(() => {
+            notification.classList.remove('active');
+        }, 5000);
+    };
 });
 
-// Fonction de notification
-function showNotification(message, type) {
-    const notification = document.getElementById('notification');
-    if (!notification) return;
-    
-    notification.textContent = message;
-    notification.className = `notification ${type} active`;
-    
-    setTimeout(() => {
-        notification.classList.remove('active');
-    }, 5000);
-}
+// Initialize any necessary polyfills
+(function() {
+    // IntersectionObserver polyfill if needed
+    if (!('IntersectionObserver' in window) ||
+        !('IntersectionObserverEntry' in window) ||
+        !('intersectionRatio' in window.IntersectionObserverEntry.prototype)) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.min.js';
+        document.head.appendChild(script);
+    }
+})();
