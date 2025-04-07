@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio BEX & PARTNERS | Benvenuto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation avec menu hamburger intégré -->
+    <nav>
+        <div class="logo">BEX & PARTNERS</div>
+
+
+        <!-- Sélecteur de langue - Début -->
+        <div class="language-selector">
+            <!-- Checkbox invisible pour gérer l'état ouvert/fermé du dropdown -->
+            <input type="checkbox" id="language-toggle">
+            
+            <!-- Bouton visible du sélecteur -->
+            <label for="language-toggle" class="language-current">
+            <!-- Drapeau de la langue courante -->
+            <span class="flag-icon flag-fr"></span> 
+            <!-- Code de la langue (FR/EN/DE/etc.) -->
+            FR
+            <!-- Icône flèche (utilise Font Awesome) -->
+            <i class="fas fa-chevron-down"></i>
+            </label>
+            
+            <!-- Liste des langues disponibles -->
+            <ul class="language-dropdown">
+            <!-- Chaque lien pointe vers la même page dans une autre langue -->
+            <!-- La classe 'active' est ajoutée à la langue courante -->
+            <li><a href="index-fr.html" class="active" title="Français">
+                <span class="flag-icon flag-fr"></span> FR</a></li>
+            
+            <li><a href="index-en.html" title="English">
+                <span class="flag-icon flag-gb"></span> EN</a></li>
+            
+            <li><a href="index-de.html" title="Deutsch">
+                <span class="flag-icon flag-de"></span> DE</a></li>
+            
+            <li><a href="index-it.html" title="Italiano">
+                <span class="flag-icon flag-it"></span> IT</a></li>
+            </ul>
+        </div>
+        <!-- Sélecteur de langue - Fin -->
+
+
+        <button class="hamburger" id="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#accueil">BENVENUTO</a></li>
+            <li><a href="#cabinet">UFFICIO</a></li>
+            <li><a href="#expertises">COMPETENZA</a></li>
+            <li><a href="#avocats">I NOSTRI AVVOCATI</a></li>
+            <li><a href="#avis">RECENSIONI DEI CLIENTI</a></li>
+            <li><a href="protection-donnees-it.html">PROTEZIONE DEI DATI</a></li>
+            <li><a href="encadrement-regulation-it.html">SUPERVISIONE E REGOLAZIONE</a></li>
+            <li><a href="#contact">CONTATTO</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Le reste du code HTML reste exactement identique -->
+    <!-- Hero Section -->
+    <header id="accueil">
+        <h1>Il tuo successo legale inizia qui</h1>
+        <p>BEX & PARTNERS unisce competenza e impegno per difendere i vostri interessi con rigore e discrezione.</p>
+        <a href="#contact" class="btn">Fissa un appuntamento</a>
+    </header>
+    
+    <!-- À propos -->
+    <section id="cabinet" class="fade-in">
+        <h2 class="section-title">Ufficio</h2>
+        <div class="about">
+            <div class="about-slider">
+                <div class="slider-container">
+                    <img src="images/7867cadd-153d-425c-a66f-5a539dce37e8.jfif" alt="Cabinet BEX & PARTNERS">
+                    <img src="images/istockphoto-876071318-612x612.jpg" alt="Cabinet BEX & PARTNERS">
+                    <img src="images/istockphoto-1628783978-612x612.jpg" alt="Cabinet BEX & PARTNERS">
+                    <img src="images/istockphoto-1448686771-612x612.webp" alt="Cabinet BEX & PARTNERS">
+                </div>
+            </div>
+            <div class="about-text">
+                <h4 class="subsection-title">Studio Legale</h4>
+                <p>Fondato dal Maître Edward Bex, il nostro studio riunisce talenti provenienti da ogni angolo del mondo, creando una sinergia unica tra diverse culture legali. Questa diversità è la nostra forza, poiché ci consente di affrontare ogni caso con prospettive diverse e complementari.</p>
+                
+                <h4 class="subsection-title">PRESTAZIONE</h4>
+                <p>La nostra gamma di servizi comprende consulenza legale e rappresentanza stragiudiziale e giudiziale. Potrete trarre vantaggio dalla nostra decennale conoscenza ed esperienza maturata in numerosi procedimenti legali.</p>
+                
+                <h4 class="subsection-title">FORMAZIONE CONTINUA</h4>
+                <p>Per noi la formazione professionale regolare è un dato di fatto, visti i continui cambiamenti del quadro normativo. Il nostro studio si occupa dei classici settori del diritto civile (diritto di famiglia, diritto del lavoro, diritto della circolazione stradale, diritto successorio, diritto delle locazioni, diritto edilizio, contratti) e del diritto penale.</p>
+                
+                <h4 class="subsection-title">SQUADRA</h4>
+                <p>Il nostro team altamente qualificato di assistenti legali e notai garantisce il funzionamento fluido e professionale dello studio, così da poter offrire a voi, nostri clienti, il supporto e la rappresentanza migliori e più completi possibili.</p>
+                
+                <h4 class="subsection-title">NOTAI</h4>
+                <p>I nostri notai sono a disposizione per tutte le questioni notarili, quali: B. Transazioni immobiliari, testamenti e accordi successori, richieste di certificati di successione, questioni di diritto societario, procure generali e anticipate in materia sanitaria, nonché testamenti di cura e biologici, altri atti e certificazioni notarili.</p>
+                
+                <a href="#expertises" class="btn">Nos domaines d'expertise</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Expertises -->
+    <section id="expertises" class="fade-in">
+        <h2 class="section-title">Le nostre aree legali</h2>
+        <div class="expertises-text-container">
+            <div class="expertises-column">
+                <h3 class="expertise-category">Diritto civile / diritto processuale civile</h3>
+                <ul class="expertise-list">
+                    <li>Diritto del lavoro</li>
+                    <li>Diritto delle successioni e delle donazioni</li>
+                    <li>Diritto delle costruzioni (privato)</li>
+                    <li>Diritto di proprietà di famiglia</li>
+                    <li>Diritto tributario</li>
+                    <li>Diritto immobiliare</li>
+                    <li>Legge sulla riscossione dei crediti</li>
+                    <li>Legge sulla caccia</li>
+                    <li>Diritto agrario</li>
+                    <li>Legge sulla locazione, la locazione e la comproprietà</li>
+                    <li>Legge sui cavalli</li>
+                    <li>Legge sui viaggi</li>
+                    <li>Diritto sulla responsabilità civile</li>
+                    <li>Codice della strada</li>
+                    <li>Diritto di esecuzione</li>
+                </ul>
+            </div>
+            
+            <div class="expertises-column">
+                <h3 class="expertise-category">Diritto penale / diritto processuale penale</h3>
+                <ul class="expertise-list">
+                    <li>Legge sugli illeciti amministrativi</li>
+                    <li>Diritto penale</li>
+                </ul>
+                
+                <h3 class="expertise-category">Diritto commerciale</h3>
+                <ul class="expertise-list">
+                    <li>Diritto bancario e dei mercati dei capitali</li>
+                    <li>Diritto societario e commerciale</li>
+                    <li>Diritto commerciale</li>
+                    <li>Diritto contrattuale</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Avocats -->
+    <section id="avocats" class="fade-in">
+        <h2 class="section-title">I nostri avvocati</h2>
+        <div class="avocats-container">
+            <button class="avocat-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="avocats-track">
+                <div class="avocat-card">
+                    <a href="avocat1-it.html" class="avocat-link">
+                        <div class="avocat-img">
+                            <img src="images/6ecc7d59-04b4-4e08-872b-de6a02edb75d.webp" alt="Maître Edward Bex">
+                        </div>
+                        <div class="avocat-info">
+                            <h3>Maestro Edward Bex</h3>
+                            <p class="specialite">Diritto commerciale - Paris II</p>
+                            <p>Specialista in fusioni e acquisizioni, 15 anni di esperienza. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="avocat-card">
+                    <a href="avocat4-it.html" class="avocat-link">
+                        <div class="avocat-img">
+                            <img src="images/90c69a4c-6aa2-4941-9abd-34f8abadec86.webp" alt="Maître Bostan Cebrail">
+                        </div>
+                        <div class="avocat-info">
+                            <h3>Maestro Bostan Cebrail</h3>
+                            <p class="specialite">Notaio - Responsabile Immobiliare</p>
+                            <p>Esperto in successioni, donazioni e operazioni immobiliari complesse.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="avocat-card">
+                    <a href="avocat3-it.html" class="avocat-link">
+                        <div class="avocat-img">
+                            <img src="images/bea8d281-7f4c-4b5d-b815-91e2973b217e.jfif" alt="Maître APP ELKE ELISABETH">
+                        </div>
+                        <div class="avocat-info">
+                            <h3>Maestro APP ELKE ELISABETH</h3>
+                            <p class="specialite">Diritto di famiglia </p>
+                            <p> Specialista in diritto di famiglia e minorile, 10 anni di esperienza</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="avocat-card">
+                    <a href="avocat2-it.html" class="avocat-link">
+                        <div class="avocat-img">
+                            <img src="images/77c6676c-ed41-4019-823e-e62deb3ec415.jfif" alt="Maître CKASCHOCE EMILIS">
+                        </div>
+                        <div class="avocat-info">
+                            <h3>Maestro CKASCHOCE EMILIS</h3>
+                            <p class="specialite">Diritto penale </p>
+                            <p>Ex procuratore, difensore in casi riguardanti i media. Esperto in diritto penale internazionale.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <button class="avocat-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    
+    <!-- Avis Clients -->
+    <section id="avis" class="fade-in">
+        <h2 class="section-title">Recensioni dei clienti</h2>
+        <div class="avis-container">
+            <div class="avis-track">
+                <!-- French Reviews (3) -->
+                <div class="avis-card">
+                    <div class="client-name">Pierre Durand</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Le cabinet a su me défendre avec brio dans une affaire complexe de droit des sociétés. Professionnalisme et réactivité exemplaires.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Marie Leclerc</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Maître Roux a été d'une grande aide lors de mon divorce difficile. Elle a su être à la fois ferme et compréhensive.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Antoine Morel</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="temoignage">Un accompagnement fiscal personnalisé qui m'a permis d'optimiser ma succession. Je recommande vivement.</div>
+                </div>
+                
+                <!-- English Reviews (3) -->
+                <div class="avis-card">
+                    <div class="client-name">John Smith</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="temoignage">Outstanding service in my international business dispute. The team was knowledgeable and efficient.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Emily Johnson</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Master Tanaka helped me navigate complex Japanese investment laws. Flawless execution.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Robert Williams</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="temoignage">Excellent advice on my cross-border tax situation. Saved me thousands in potential liabilities.</div>
+                </div>
+                
+                <!-- German Reviews (3) -->
+                <div class="avis-card">
+                    <div class="client-name">Hans Müller</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Hervorragende Beratung in Steuerfragen. Sehr professionell und kompetent.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Anna Schmidt</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Meisterhaft geführte Scheidung mit internationalen Aspekten. Absolute Diskretion.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Thomas Weber</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="temoignage">Gute Vertretung in meinem Wirtschaftsstrafverfahren. Etwas teuer, aber effektiv.</div>
+                </div>
+                
+                <!-- Italian Reviews (3) -->
+                <div class="avis-card">
+                    <div class="client-name">Marco Rossi</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Servizio eccellente per la mia causa penale. Professionalità e competenza ai massimi livelli.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Laura Bianchi</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Il team ha gestito il mio divorzio internazionale con grande sensibilità. Raccomandatissimo.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Giovanni Romano</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="temoignage">Buona assistenza per la mia questione fiscale internazionale. Prezzi un po' alti ma giustificati.</div>
+                </div>
+                
+                <!-- Spanish Reviews (3) -->
+                <div class="avis-card">
+                    <div class="client-name">Carlos García</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Excelente servicio en mi disputa comercial internacional. Muy profesionales y eficientes.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Ana Martínez</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">El Maestro Mendes me ayudó con una compleja herencia internacional. ¡Perfecto!</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Javier López</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="temoignage">Buena representación en mi caso penal. Los honorarios son altos pero los resultados están ahí.</div>
+                </div>
+                
+                <!-- Portuguese Reviews (3) -->
+                <div class="avis-card">
+                    <div class="client-name">João Silva</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Serviço excepcional no meu caso de direito empresarial internacional. Muito profissional.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Ana Oliveira</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">O Mestre Mendes ajudou-me com uma complexa herança internacional. Perfeito!</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Miguel Santos</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="temoignage">Boa representação no meu caso penal. Honorários altos mas resultados satisfatórios.</div>
+                </div>
+                
+                <!-- Lithuanian Reviews (3) -->
+                <div class="avis-card">
+                    <div class="client-name">Jonas Petrauskas</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Puikus paslaugos mano tarptautinėje verslo ginče. Labai profesionalu ir efektyvu.</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Ona Kazlauskienė</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="temoignage">Meistras Mendes man padėjo su sudėtinga tarptautine paveldėjimo byla. Tobula!</div>
+                </div>
+                <div class="avis-card">
+                    <div class="client-name">Tomas Jankauskas</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="temoignage">Geras atstovavimas mano baudžiamojoje byloje. Mokestis didelis, bet rezultatai patenkinti.</div>
+                </div>
+            </div>
+        </div>
+        <div class="laissez-avis-container">
+            <button id="open-avis-modal" class="laissez-avis">
+                <i class="fas fa-pen"></i> Lascia una recensione
+            </button>
+        </div>
+    </section>
+    
+    <!-- Modal pour laisser un avis -->
+    <div id="avis-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h3>Lascia una recensione</h3>
+            <form id="avis-form">
+                <div class="form-group">
+                    <label for="client-name">Nome e cognome*</label>
+                    <input type="text" id="client-name" name="name" required>
+                </div>
+                
+                <div class="rating-container">
+                    <span class="rating-label">Note*</span>
+                    <div class="rating-stars">
+                        <input type="radio" id="star5" name="note" value="5" required>
+                        <label for="star5" title="Excellent">★</label>
+                        <input type="radio" id="star4" name="note" value="4">
+                        <label for="star4" title="Très bon">★</label>
+                        <input type="radio" id="star3" name="note" value="3">
+                        <label for="star3" title="Bon">★</label>
+                        <input type="radio" id="star2" name="note" value="2">
+                        <label for="star2" title="Moyen">★</label>
+                        <input type="radio" id="star1" name="note" value="1">
+                        <label for="star1" title="Médiocre">★</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client-comment">Testimonianza*</label>
+                    <textarea id="client-comment" name="comment" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Invia l'avviso
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <section id="contact" class="contact fade-in">
+        <h2 class="section-title">Contattaci</h2>
+        <div class="contact-info">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>+33 756-87-41-15</span>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>contact@bex-partner.com</span>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>12 Rue de la Paix, 75002 Paris</span>
+            </div>
+        </div>
+        <div class="contact-buttons">
+            <a href="#" id="show-form-btn" class="contact-btn">Invia un messaggio</a>
+        </div>
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xgvanppz" method="POST">
+            <div class="form-group">
+                <label for="name">Nome e cognome</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Soggetto</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Seleziona un argomento</option>
+                    <option value="consultation">Richiesta di consulenza</option>
+                    <option value="expertise">Domanda su una competenza</option>
+                    <option value="rdv">Fissa un appuntamento</option>
+                    <option value="avis">Invia una recensione</option>
+                    <option value="autre">Altra richiesta</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Messaggio</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Inviare</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Consiglio dei ministri 2023 BEX & PARTNERS. Tutti i diritti riservati.</p>
+    </footer>
+    
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+    
+    <script src="script.js"></script>
+    <!-- Intégration du service de tchat en ligne ( tidio ) -->
+    <script src="//code.tidio.co/zeo3cujdqrtkynwec6cidc3ldritfwgi.js" async></script>
+</body>
+</html>

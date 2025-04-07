@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEX & PARTNERS | Data Protection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #1a3e72;
+        }
+        
+        /* Navigation - Identique à l'accueil */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a3e72;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #1a3e72;
+        }
+        
+        /* Contenu principal */
+        main {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem 5rem;
+        }
+        
+        .page-header {
+            background: #1a3e72;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+        }
+        
+        .data-section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .data-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #1a3e72;
+        }
+        
+        .data-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .data-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        .data-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-link {
+            color: #1a3e72;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-link:hover {
+            color: #0d2a56;
+            text-decoration: underline;
+        }
+        
+        /* Footer - Identique à l'accueil */
+        footer {
+            background: #0d2a56;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: #0d2a56;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .nav-links a {
+                color: white;
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
+            
+            .hamburger {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #1a3e72;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .data-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - Identique à l'accueil -->
+    <nav>
+        <div class="logo">BEX & PARTNERS</div>
+        <button class="hamburger" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index-en.html">HOME</a></li>
+            <li><a href="index-en.html#cabinet">OFFICE</a></li>
+            <li><a href="index-en.html#expertises">EXPERTISE</a></li>
+            <li><a href="index-en.html#avocats">OUR LAWYERS</a></li>
+            <li><a href="index-en.html#avis">CUSTOMERS REVIEWS</a></li>
+            <li><a href="protection-donnees-en.html">DATA PROTECTION</a></li>
+            <li><a href="encadrement-regulation-en.html">SUPERVISION & REGULATION</a></li>
+            <li><a href="index-en.html#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <header class="page-header">
+            <h1>DATA PROTECTION</h1>
+            <p>The BEX-PARTNERS law firm places the utmost importance on protecting the personal data of its clients and visitors.</p>
+        </header>
+
+        <section class="data-section">
+            <h2>DATA COLLECTION AND USE</h2>
+            <p>In accordance with the General Data Protection Regulation (GDPR) and applicable legal provisions, we ensure the confidentiality and security of the information you provide to us.</p>
+            <p>Personal data collected via our website, contact forms, or communications is processed exclusively for:</p>
+            <ul>
+            <li>Responding to your requests and inquiries</li>
+            <li>Ensuring the professional follow-up of your files</li>
+            <li>Complying with our legal and ethical obligations</li>
+            </ul>
+            <p>This information is neither sold nor transferred to third parties, except with a legal obligation or your explicit consent.</p>
+        </section>
+
+        <section class="data-section">
+            <h2>DATA SECURITY AND RETENTION</h2>
+            <p>We implement rigorous technical and organizational measures to ensure the security of your data and prevent unauthorized access, loss, or disclosure.</p>
+            <p>Your data is retained for the period strictly necessary for the purposes for which it was collected, in accordance with our legal obligations and applicable limitation periods.</p>
+        </section>
+
+        <section class="data-section">
+            <h2>YOUR RIGHTS</h2>
+            <p>In accordance with current regulations, you have the following rights regarding your personal data:</p>
+            <ul>
+            <li>Right of access and rectification</li>
+            <li>Right to erasure ("right to be forgotten")</li>
+            <li>Right to restriction of processing</li>
+            <li>Right to object to processing</li>
+            <li>Right to data portability</li>
+            </ul>
+            <p>To exercise these rights, you can contact us at the following address: <a href="mailto:contact@bex-partner.com" class="contact-link">contact@bex-partner.com</a></p>
+            <p>We undertake to respond to all requests within a maximum of one month. If there is any doubt about your identity, we may ask for a copy of your identity document.</p>
+        </section>
+
+        <section class="data-section">
+            <h2>COOKIES AND TRACEABILITY</h2>
+            <p>Our website may use cookies to improve the user experience and analyze traffic. These cookies allow us to:</p>
+            <ul>
+            <li>Remember your browsing preferences</li>
+            <li>Measure our website's traffic</li>
+            <li>Optimize technical performance</li>
+            </ul>
+            <p>You can manage your cookie preferences at any time through your browser settings. However, refusing cookies may affect certain features of the website.</p>
+        </section>
+
+        <section class="data-section">
+            <p>For any questions regarding the protection of your personal data or for any specific requests regarding your rights, please do not hesitate to contact us at <a href="mailto:contact@bex-partner.com" class="contact-link">contact@bex-partner.com</a>.</p>
+            <p>We reserve the right to modify this data protection policy in order to comply with evolving legal provisions. Any changes will be published on this page.</p>
+        </section>
+    </main>
+
+    <!-- Footer - Identique à l'accueil -->
+    <footer>
+        <p>&copy; 2023 BEX-PARTNERS Firm. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Script pour le menu hamburger
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Fermer le menu quand on clique sur un lien (mobile)
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

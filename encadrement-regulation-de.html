@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufsicht und Regulierung | BEX & PARTNERS Kanzlei</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #1a3e72;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Styles de la navigation (identique à l'accueil) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a3e72;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #1a3e72;
+        }
+        
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #1a3e72;
+        }
+        
+        /* Contenu principal */
+        main {
+            padding-top: 80px;
+            padding-bottom: 3rem;
+        }
+        
+        .regulation-header {
+            background: #1a3e72;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .regulation-header h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .regulation-content {
+            background: white;
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-block {
+            margin-bottom: 3rem;
+        }
+        
+        .section-block h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #1a3e72;
+        }
+        
+        .section-block p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .regulation-list {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .regulation-list li {
+            margin-bottom: 1rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .regulation-list li:before {
+            content: "•";
+            color: #1a3e72;
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+        
+        .highlight-box {
+            background-color: #f0f4f9;
+            border-left: 4px solid #1a3e72;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* Footer (identique à l'accueil) */
+        footer {
+            background: #0d2a56;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0d2a56;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                color: white;
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                padding: 0.8rem 0;
+                display: block;
+                width: 100%;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .regulation-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .regulation-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (identique à l'accueil) -->
+    <nav>
+        <a href="index.html" class="logo">BEX & PARTNERS</a>
+        <button class="hamburger" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index-de.html">HOME</a></li>
+            <li><a href="index-de.html#cabinet">BÜRO</a></li>
+            <li><a href="index-de.html#expertises">SACHVERSTAND</a></li>
+            <li><a href="index-de.html#avocats">UNSERE ANWÄLTE</a></li>
+            <li><a href="index-de.html#avis">KUNDENREZENSIONEN</a></li>
+            <li><a href="protection-donnees-de.html">DATENSCHUTZ</a></li>
+            <li><a href="encadrement-regulation-de.html">AUFSICHT UND REGULIERUNG</a></li>
+            <li><a href="index-de.html#contact">KONTAKT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <header class="regulation-header">
+            <div class="container">
+                <h1>AUFSICHT UND REGULIERUNG</h1>
+            </div>
+        </header>
+        
+        <div class="container">
+            <div class="regulation-content">
+                <section class="section-block">
+                    <p>Die Kanzlei BEX & PARTNERS arbeitet im Einklang mit den rechtlichen und ethischen Standards, die für den Anwalts- und Notarberuf gelten. Wir halten uns an die nationalen und europäischen Vorschriften, um eine strenge und transparente Rechtspraxis zu gewährleisten.</p>
+                </section>
+                
+                <section class="section-block">
+                    <h2>ZUSTÄNDIGE AUFSICHTSBEHÖRDE</h2>
+                    <p>Die Kanzlei steht unter der Aufsicht der Pariser Anwaltskammer und des Nationalen Anwaltsrats (CNB). Diese Gremien gewährleisten die Einhaltung der für Rechtsanwälte geltenden Berufs- und Ethikregeln.</p>
+                </section>
+                
+                <section class="section-block">
+                    <h2>BEVOLLMÄCHTIGTE VERTRETER</h2>
+                    <p>Die Kanzlei BEX & PARTNERS wird von Maître EDWARD BEX vertreten, der bei der Pariser Anwaltskammer eingetragen ist. Maître EDWARD BEX ist verantwortlich für die Einhaltung der regulatorischen und ethischen Verpflichtungen, die die Ausübung des Anwalts- und Notarberufs innerhalb der Kanzlei regeln.</p>
+                </section>
+                
+                <section class="section-block">
+                    <h2>BERUFLICHE REGELUNGEN</h2>
+                    <p>Unsere Tätigkeit unterliegt zahlreichen Gesetzes- und Verordnungstexten, die gewährleisten, dass wir im Einklang mit professionellen Standards arbeiten.</p>
+                    
+                    <h3>Bundesrechtsanwaltskammer:</h3>
+                    <ul class="regulation-list">
+                        <li>Bundesrechtsanwaltsordnung (BRAO): Regelt die Ausübung des Rechtsanwaltsberufs.</li>
+                        <li>Ehrenkodex für Rechtsanwälte (BORA): Legt ethische und berufliche Regeln fest.</li>
+                        <li>Fachanwaltsordnung (FAO): Regelt die juristischen Spezialisierungen.</li>
+                        <li>Rechtsanwaltsvergütungsgesetz (RVG): Definiert den Rahmen für anwaltliche Gebühren und Kosten.</li>
+                        <li>Berufsregeln für Rechtsanwälte der Europäischen Union: Harmonisiert die Praxis auf europäischer Ebene.</li>
+                    </ul>
+                    
+                    <h3>Bundesnotarkammer:</h3>
+                    <ul class="regulation-list">
+                        <li>Bundesnotargesetz (BNotO): Organisiert den Notariatsberuf.</li>
+                        <li>Beurkundungsgesetz (BeurkG): Regelt notarielle Handlungen.</li>
+                        <li>Richtlinien der Notarkammern: Legt die gute Berufspraxis fest.</li>
+                        <li>Notarordnung (DONot): Regelt die Ausübung notarieller Funktionen.</li>
+                        <li>Gerichts- und Notarkostengesetz (GNotKG): Definiert die Kosten, die mit notariellen Dienstleistungen verbunden sind.</li>
+                        <li>Europäischer Berufskodex: Legt die ethischen Grundsätze fest, die für Notare in Europa gelten.</li>
+                    </ul>
+                </section>
+                
+                <section class="section-block">
+                    <h2>WEITERE INFORMATIONEN</h2>
+                    <div class="highlight-box">
+                        <p>Rechtsanwälte sind gemäß § 51 Bundesrechtsanwaltsordnung (BRAO) verpflichtet, eine Berufshaftpflichtversicherung mit einer Mindestversicherungssumme von 250.000 Euro abzuschließen.</p>
+                    </div>
+                    
+                    <p>Die Firma BEX & PARTNERS ist bei der ALLIANZ ASSURANCE versichert, was einen angemessenen Versicherungsschutz für alle ihre Aktivitäten garantiert. Der räumliche Geltungsbereich dieser Versicherung umfasst die Mitgliedstaaten der Europäischen Union und gewährleistet somit den Schutz gemäß den gesetzlichen Bestimmungen.</p>
+
+                    <p>Bei Fragen zu den regulatorischen Verpflichtungen des Unternehmens können Sie sich gerne direkt an uns wenden.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (identique à l'accueil) -->
+    <footer>
+        <p>&copy; 2023 Kabinett BEX & PARTNERS. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        // Script pour le menu hamburger
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.body;
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                
+                if (navLinks.classList.contains('active')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = '';
+                }
+            });
+            
+            // Ferme le menu lorsqu'on clique sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEX & PARTNERS | Protection des Données</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #1a3e72;
+        }
+        
+        /* Navigation - Identique à l'accueil */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a3e72;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #1a3e72;
+        }
+        
+        /* Contenu principal */
+        main {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem 5rem;
+        }
+        
+        .page-header {
+            background: #1a3e72;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+        }
+        
+        .data-section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .data-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #1a3e72;
+        }
+        
+        .data-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .data-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        .data-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-link {
+            color: #1a3e72;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-link:hover {
+            color: #0d2a56;
+            text-decoration: underline;
+        }
+        
+        /* Footer - Identique à l'accueil */
+        footer {
+            background: #0d2a56;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: #0d2a56;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .nav-links a {
+                color: white;
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
+            
+            .hamburger {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #1a3e72;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .data-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - Identique à l'accueil -->
+    <nav>
+        <div class="logo">BEX & PARTNERS</div>
+        <button class="hamburger" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#cabinet">Le Cabinet</a></li>
+            <li><a href="index.html#expertises">Expertises</a></li>
+            <li><a href="index.html#avocats">Nos Avocats</a></li>
+            <li><a href="index.html#avis">Avis Clients</a></li>
+            <li><a href="protection-donnees.html">Protection des Données</a></li>
+            <li><a href="encadrement-regulation.html">Encadrement et Régulation</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <header class="page-header">
+            <h1>PROTECTION DES DONNÉES</h1>
+            <p>Le cabinet d'avocats BEX-PARTNERS accorde une importance primordiale à la protection des données personnelles de ses clients et visiteurs.</p>
+        </header>
+
+        <section class="data-section">
+            <h2>COLLECTE ET UTILISATION DES DONNÉES</h2>
+            <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et aux dispositions légales applicables, nous veillons à assurer la confidentialité et la sécurité des informations que vous nous confiez.</p>
+            <p>Les données personnelles recueillies via notre site, nos formulaires de contact ou nos échanges sont traitées exclusivement pour :</p>
+            <ul>
+                <li>Répondre à vos demandes et sollicitations</li>
+                <li>Assurer le suivi professionnel de vos dossiers</li>
+                <li>Respecter nos obligations légales et déontologiques</li>
+            </ul>
+            <p>Ces informations ne sont ni vendues, ni cédées à des tiers, sauf obligation légale ou consentement explicite de votre part.</p>
+        </section>
+
+        <section class="data-section">
+            <h2>SÉCURITÉ ET CONSERVATION DES DONNÉES</h2>
+            <p>Nous mettons en place des mesures techniques et organisationnelles rigoureuses pour garantir la sécurité de vos données et prévenir tout accès non autorisé, perte ou divulgation.</p>
+            <p>Vos données sont conservées pour la durée strictement nécessaire au regard des finalités pour lesquelles elles ont été collectées, conformément à nos obligations légales et aux délais de prescription applicables.</p>
+        </section>
+
+        <section class="data-section">
+            <h2>VOS DROITS</h2>
+            <p>Conformément à la réglementation en vigueur, vous disposez des droits suivants concernant vos données personnelles :</p>
+            <ul>
+                <li>Droit d'accès et de rectification</li>
+                <li>Droit à l'effacement ("droit à l'oubli")</li>
+                <li>Droit à la limitation du traitement</li>
+                <li>Droit d'opposition au traitement</li>
+                <li>Droit à la portabilité des données</li>
+            </ul>
+            <p>Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@bex-partner.com" class="contact-link">contact@bex-partner.com</a></p>
+            <p>Nous nous engageons à répondre à toute demande dans un délai d'un mois maximum. En cas de doute sur votre identité, nous pourrons vous demander une copie de votre pièce d'identité.</p>
+        </section>
+
+        <section class="data-section">
+            <h2>COOKIES ET TRAÇABILITÉ</h2>
+            <p>Notre site peut utiliser des cookies afin d'améliorer l'expérience utilisateur et analyser l'audience. Ces cookies nous permettent de :</p>
+            <ul>
+                <li>Mémoriser vos préférences de navigation</li>
+                <li>Mesurer l'audience de notre site web</li>
+                <li>Optimiser les performances techniques</li>
+            </ul>
+            <p>Vous avez la possibilité de gérer vos préférences en matière de cookies à tout moment via les paramètres de votre navigateur. Le refus des cookies peut toutefois altérer certaines fonctionnalités du site.</p>
+        </section>
+
+        <section class="data-section">
+            <p>Pour toute question relative à la protection de vos données personnelles ou pour toute demande spécifique concernant vos droits, n'hésitez pas à nous contacter à l'adresse <a href="mailto:contact@bex-partner.com" class="contact-link">contact@bex-partner.com</a>.</p>
+            <p>Nous nous réservons le droit de modifier cette politique de protection des données afin de nous conformer à l'évolution des dispositions légales. Toute modification sera publiée sur cette page.</p>
+        </section>
+    </main>
+
+    <!-- Footer - Identique à l'accueil -->
+    <footer>
+        <p>&copy; 2023 Cabinet BEX-PARTNERS. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Script pour le menu hamburger
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+            
+            // Fermer le menu quand on clique sur un lien (mobile)
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
