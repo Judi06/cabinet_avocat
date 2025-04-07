@@ -857,3 +857,163 @@ footer {
         margin-bottom: 1rem;
     }
 }
+
+
+
+/* ============================================= */
+/* Sélecteur de langue - Styles de base */
+/* ============================================= */
+
+.language-selector {
+    position: relative; /* Nécessaire pour positionner le dropdown */
+    display: inline-block;
+    margin-left: auto; /* Pousse le sélecteur à droite */
+    margin-right: 20px; /* Espacement depuis le bord */
+    z-index: 1001; /* Au-dessus des autres éléments */
+  }
+  
+  /* Cache la checkbox mais garde la fonctionnalité */
+  #language-toggle {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Style du bouton principal */
+  .language-current {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.9); /* Fond semi-transparent */
+    border-radius: 4px;
+    font-weight: 700;
+    color: #1a3e72; /* Couleur du texte */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1); /* Bordure subtile */
+  }
+  
+  /* Effet au survol */
+  .language-current:hover {
+    background: rgba(255,255,255,1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Style de l'icône flèche */
+  .language-current i {
+    margin-left: 8px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Style de la liste déroulante */
+  .language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 120px; /* Largeur fixe */
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    margin-top: 5px;
+  }
+  
+  /* Affiche le dropdown quand la checkbox est cochée */
+  #language-toggle:checked ~ .language-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Rotation de l'icône quand ouvert */
+  #language-toggle:checked + .language-current i {
+    transform: rotate(180deg);
+  }
+  
+  /* Style des options de langue */
+  .language-dropdown li a {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 14px;
+  }
+  
+  /* Effet au survol des options */
+  .language-dropdown li a:hover {
+    background: #f8f8f8;
+    color: #1a3e72;
+  }
+  
+  /* Style de la langue active */
+  .language-dropdown li a.active {
+    font-weight: bold;
+    background: #f0f4fa;
+    color: #1a3e72;
+  }
+  
+  /* ============================================= */
+  /* Icônes de drapeaux (SVG intégrés) */
+  /* ============================================= */
+  
+  .flag-icon {
+    display: inline-block;
+    width: 20px; /* Largeur fixe */
+    height: 15px; /* Hauteur fixe */
+    margin-right: 8px; /* Espacement depuis le texte */
+    background-size: cover; /* Ajuste le SVG à la taille */
+    background-position: center;
+    border: 1px solid rgba(0,0,0,0.1); /* Bordure subtile */
+  }
+  
+  /* France */
+  .flag-fr { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23002395" d="M0 0h3v6H0z"/><path fill="%23fff" d="M3 0h3v6H3z"/><path fill="%23ED2939" d="M6 0h3v6H6z"/></svg>'); }
+  
+  /* Royaume-Uni (pour anglais) */
+  .flag-gb { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><path fill="%23012169" d="M0 0v30h60V0z"/><path fill="%23FFF" d="M0 0v3.75h60V0zm0 11.25v7.5h60v-7.5zM0 26.25V30h60v-3.75z"/><path fill="%23C8102E" d="M0 5.625V8.25h60V5.625zm0 11.25v2.625h60v-2.625zM0 22.5v2.625h60V22.5z"/><path fill="%23FFF" d="M25 0v30h10V0z"/><path fill="%23C8102E" d="M27.5 0v30h5V0z"/></svg>'); }
+  
+  /* Allemagne */
+  .flag-de { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3"><path fill="%23000" d="M0 0h5v3H0z"/><path fill="%23D00" d="M0 1h5v2H0z"/><path fill="%23FFCE00" d="M0 2h5v1H0z"/></svg>'); }
+  
+  /* Italie */
+  .flag-it { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3"><path fill="%23009246" d="M0 0h5v3H0z"/><path fill="%23FFF" d="M1.666 0h1.666v3H1.666z"/><path fill="%23CE2B37" d="M3.333 0H5v3H3.333z"/></svg>'); }
+  
+  /* Espagne */
+  .flag-es { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23AA151B" d="M0 0h9v6H0z"/><path fill="%23F1BF00" d="M0 1h9v4H0z"/></svg>'); }
+  
+  /* Portugal */
+  .flag-pt { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23046A38" d="M0 0h9v6H0z"/><path fill="%23DA291C" d="M4.5 0h4.5v6H4.5z"/><path fill="%23FFD700" d="M3 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>'); }
+  
+  /* ============================================= */
+  /* Responsive - Adaptations pour mobile */
+  /* ============================================= */
+  
+  @media (max-width: 768px) {
+    .language-selector {
+      margin-right: 10px; /* Réduit l'espacement */
+      order: 1; /* Position après le bouton hamburger */
+    }
+    
+    .language-current {
+      padding: 6px 10px; /* Taille réduite */
+      font-size: 14px; /* Texte plus petit */
+    }
+    
+    .language-dropdown {
+      width: 110px; /* Largeur légèrement réduite */
+    }
+    
+    .flag-icon {
+      width: 18px; /* Drapeaux légèrement plus petits */
+      height: 13px;
+    }
+  }
