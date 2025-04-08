@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        // Ajoute une classe au body selon la langue
+        document.body.classList.add(`lang-${document.documentElement.lang}`);
+
+        // Met à jour le sélecteur
+        const currentLang = document.documentElement.lang;
+        document.getElementById('current-lang').textContent = currentLang.toUpperCase();
+    </script>
+    
 </head>
 <body>
     <!-- Navigation avec menu hamburger intégré -->
@@ -46,6 +56,12 @@
             
             <li><a href="index-it.html" title="Italiano">
                 <span class="flag-icon flag-it"></span> IT</a></li>
+
+            <li><a href="index-es.html" class="active" title="Español">
+                    <span class="flag-icon flag-es"></span> ES</a></li>
+                  
+            <li><a href="index-pt.html" title="Português">
+                    <span class="flag-icon flag-pt"></span> PT</a></li>
             </ul>
         </div>
         <!-- Sélecteur de langue - Fin -->
@@ -102,7 +118,7 @@
                 <p>Our well-trained team of legal assistants and notaries ensures the smooth and professional operation of the office so that we can provide you, our clients, with the best and most comprehensive support and representation possible.</p>
                 
                 <h4 class="subsection-title">NOTARIES</h4>
-                <p>Our notaries are available for all notarial matters, such as: B. Real estate transactions, wills and inheritance agreements, requests for certificates of succession, corporate law matters, general and advance powers of attorney in health matters as well as care and living wills, other notarial acts and certifications.</p>
+                <p>Our notaries are available for all notarial matters, such as:  Real estate transactions, wills and inheritance agreements, requests for certificates of succession, corporate law matters, general and advance powers of attorney in health matters as well as care and living wills, other notarial acts and certifications.</p>
                 
                 <a href="#expertises" class="btn">Nos domaines d'expertise</a>
             </div>
