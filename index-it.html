@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        // Ajoute une classe au body selon la langue
+        document.body.classList.add(`lang-${document.documentElement.lang}`);
+
+        // Met à jour le sélecteur
+        const currentLang = document.documentElement.lang;
+        document.getElementById('current-lang').textContent = currentLang.toUpperCase();
+    </script>
+    
 </head>
 <body>
     <!-- Navigation avec menu hamburger intégré -->
@@ -46,6 +56,12 @@
             
             <li><a href="index-it.html" class="active" title="Italiano">
                 <span class="flag-icon flag-it"></span> IT</a></li>
+
+            <li><a href="index-es.html" title="Español">
+                    <span class="flag-icon flag-es"></span> ES</a></li>
+                  
+            <li><a href="index-pt.html" title="Português">
+                    <span class="flag-icon flag-pt"></span> PT</a></li>
             </ul>
         </div>
         <!-- Sélecteur de langue - Fin -->
@@ -102,7 +118,7 @@
                 <p>Il nostro team altamente qualificato di assistenti legali e notai garantisce il funzionamento fluido e professionale dello studio, così da poter offrire a voi, nostri clienti, il supporto e la rappresentanza migliori e più completi possibili.</p>
                 
                 <h4 class="subsection-title">NOTAI</h4>
-                <p>I nostri notai sono a disposizione per tutte le questioni notarili, quali: B. Transazioni immobiliari, testamenti e accordi successori, richieste di certificati di successione, questioni di diritto societario, procure generali e anticipate in materia sanitaria, nonché testamenti di cura e biologici, altri atti e certificazioni notarili.</p>
+                <p>I nostri notai sono a disposizione per tutte le questioni notarili, quali:  Transazioni immobiliari, testamenti e accordi successori, richieste di certificati di successione, questioni di diritto societario, procure generali e anticipate in materia sanitaria, nonché testamenti di cura e biologici, altri atti e certificazioni notarili.</p>
                 
                 <a href="#expertises" class="btn">Nos domaines d'expertise</a>
             </div>
