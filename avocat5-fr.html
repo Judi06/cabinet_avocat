@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet BEX & PARTNERS | Maître Roger CONGOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Lien vers le CSS principal -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles spécifiques à la page avocat */
+        .avocat-presentation {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 0 2rem;
+            color: #333;
+        }
+        
+        .avocat-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .avocat-nom {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1a3e72;
+            margin-bottom: 1rem;
+        }
+        
+        .avocat-titre {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .avocat-image-path {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 2rem 0;
+        }
+        
+        .avocat-image-path span {
+            color: #1a3e72;
+            font-size: 0.9rem;
+        }
+        
+        .avocat-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .avocat-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .avocat-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .avocat-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1a3e72;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #1a3e72;
+            padding-bottom: 0.5rem;
+        }
+        
+        .avocat-section p, .avocat-section ul {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .avocat-section ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+        
+        .avocat-section li {
+            position: relative;
+            margin-bottom: 0.8rem;
+        }
+        
+        .avocat-section li:before {
+            content: "▪";
+            color: #1a3e72;
+            position: absolute;
+            left: -1.5rem;
+        }
+        
+        .contact-avocat-container {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        /* Réutilisation du style du bouton principal */
+        .contact-avocat-btn {
+            display: inline-block;
+            background: #1a3e72;
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .contact-avocat-btn:hover {
+            background: #0d2a56;
+        }
+        
+        /* Style du formulaire (identique à l'accueil) */
+        #contact-avocat-form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: left;
+            color: #333;
+            display: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+.avocat-photo-container {
+    width: 200px;
+    height: 200px;
+    margin: 1.5rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #1a3e72;
+}
+
+.avocat-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation (identique à l'accueil) -->
+    <nav>
+        <div class="logo">BEX & PARTNERS</div>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html#accueil">Accueil</a></li>
+            <li><a href="index.html#cabinet">Le Cabinet</a></li>
+            <li><a href="index.html#expertises">Expertises</a></li>
+            <li><a href="index.html#avocats">Nos Avocats</a></li>
+            <li><a href="index.html#avis">Avis Clients</a></li>
+            <li><a href="protection-donnees.html">Protection des Données</a></li>
+            <li><a href="encadrement-regulation.html">Encadrement et Régulation</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu de la présentation -->
+    <main class="avocat-presentation">
+        <div class="avocat-header">
+            <h1 class="avocat-nom">Maître Roger CONGOS</h1>
+            <p class="avocat-titre">Avocat et notaire</p>
+
+    <!-- Ajout de l'image de l'avocat -->
+    <div class="avocat-photo-container">
+        <img src="images/aa63a0f2-b758-47d9-89b7-b6553cffb7af.jfif" alt="Maître Roger Congos" class="avocat-photo">
+    </div>
+            
+            <div class="avocat-image-path">
+                <span>Accueil</span>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>Nos Avocats</span>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span>Maître Roger CONGOS</span>
+            </div>
+        </div>
+        
+        <div class="avocat-content">
+            <div class="avocat-section">
+                <h2>Parcours Professionnel</h2>
+                <p>Admis au barreau depuis Janvier 1985</p>
+                <p>Admissible à un placement dans tous les tribunaux locaux, régionaux et régionaux supérieurs.</p>
+                
+                <h2>Formation</h2>
+                <p>Étude: Université Paris II La Sorbonne</p>
+                <p>Conseiller dans tous les domaines du droit civil et successoral.</p>
+                <p>Conseil aux entreprises de taille moyenne, notamment dans les domaines du droit de successions, héritages et du droit des contrats bancaires et de travail.</p>
+            </div>
+            
+            <div class="avocat-section">
+                <h2>PRINCIPAUX DOMAINES D'ACTIVITÉS</h2>
+                <ul>
+                    <li>Droit des successions et rédaction de testaments, en particulier</li>
+                    <li>Procédure de certificat d'héritage</li>
+                    <li>Droit des contrats familiales et Litiges</li>
+                    <li>Administration successorale et exécution testamentaire</li>
+                    <li>Droit bancaire et Crédit financier</li>
+                    <li>Dissolution des communautés d'héritiers</li>
+                    <li>Créances obligatoires sur actions</li>
+                    <li>Héritage anticipé</li>
+                    <li>Droit du travail et protection contre le licenciement</li>
+                    <li>Droit des erreurs médicales et droit médical</li>
+                    <li>Droit commercial et assurance.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bouton de contact -->
+        <div class="contact-avocat-container">
+            <button id="contact-avocat-btn" class="contact-avocat-btn">
+                <i class="fas fa-envelope"></i> Contacter Maître Roger CONGOS
+            </button>
+            
+            <!-- Formulaire de contact (identique à l'accueil) -->
+            <form id="contact-avocat-form" class="contact-form" action="https://formspree.io/f/xnnpgoae" method="POST">
+                <div class="form-group">
+                    <label for="name">Nom Complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Sélectionnez un sujet</option>
+                        <option value="consultation">Demande de consultation</option>
+                        <option value="expertise">Question sur une expertise</option>
+                        <option value="rdv">Prise de rendez-vous</option>
+                        <option value="autre">Autre demande</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer (identique à l'accueil) -->
+    <footer>
+        <p>&copy; 2023 Cabinet BEX & PARTNERS. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Gestion du menu hamburger (identique à l'accueil)
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.body;
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                
+                if (navLinks.classList.contains('active')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = '';
+                }
+            });
+
+            // Gestion du formulaire de contact
+            const contactBtn = document.getElementById('contact-avocat-btn');
+            const contactForm = document.getElementById('contact-avocat-form');
+            const notification = document.getElementById('notification');
+
+            contactBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                contactForm.style.display = contactForm.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Soumission du formulaire
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        showNotification('Votre message a été envoyé avec succès !', 'success');
+                        contactForm.reset();
+                        setTimeout(() => {
+                            contactForm.style.display = 'none';
+                        }, 2000);
+                    } else {
+                        throw new Error('Erreur lors de l\'envoi du formulaire');
+                    }
+                } catch (error) {
+                    showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
+                    console.error(error);
+                }
+            });
+
+            function showNotification(message, type) {
+                notification.textContent = message;
+                notification.className = `notification ${type} active`;
+                
+                setTimeout(() => {
+                    notification.classList.remove('active');
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
